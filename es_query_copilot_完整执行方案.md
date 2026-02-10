@@ -21,7 +21,7 @@
 ## 1. 交付范围（MVP）
 
 ### 1.1 必须实现
-- `POST /draft`：NL → DSL（只生成，不执行）
+- `POST /draft`：NL → DSL（只生成，不执行） 
 - `POST /validate`：校验 DSL + 自动修复（最多 2 轮）
 - `POST /run`：执行查询（仅允许通过校验的 DSL）
 - `POST /explain`：解释单条文档为何命中/不命中
