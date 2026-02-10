@@ -1,0 +1,25 @@
+[
+    {
+        "nl_query": "最近7天失败订单按国家前10",
+        "index": "orders-*",
+        "must_contain": [
+            "range",
+            "status.keyword",
+            "terms"
+        ],
+        "must_not_contain": [
+            "query_string"
+        ]
+    },
+    {
+        "nl_query": "查找金额大于100的订单",
+        "index": "orders-*",
+        "must_contain": [
+            "range",
+            "amount"
+        ],
+        "must_not_contain": [
+            "script"
+        ]
+    }
+]
