@@ -91,6 +91,44 @@
 
 ---
 
+## 📦 部署到新机器 (Deployment)
+
+如果您需要在服务器或其他电脑上运行本项目，请按以下步骤操作：
+
+### 1. 获取代码
+使用 Git 拉取代码（或者直接拷贝整个文件夹）：
+```bash
+git clone <您的仓库地址>
+cd es-query-copilot
+```
+
+### 2. 环境准备
+确保目标机器已安装 **Docker** 和 **Docker Compose**。
+- Windows/Mac: 安装 Docker Desktop
+- Linux: `sudo apt install docker.io docker-compose`
+
+### 3. 配置环境变量
+`.env` 文件包含敏感信息（如 API Key），通常不会上传到 Git。您需要手动创建它：
+```bash
+# 复制示例配置
+cp .env.example .env
+
+# 编辑 .env 文件，填入您的 LLM Key 和 ES 地址
+# Linux/Mac
+nano .env 
+# Windows
+notepad .env
+```
+
+### 4. 启动服务
+执行以下命令构建并启动容器：
+```bash
+docker-compose up --build -d
+```
+启动后，访问 `http://localhost:8080/docs` 验证服务是否正常。
+
+---
+
 ## 🛠️ 常见问题 (FAQ)
 
 **Q: 为什么 `/draft` 生成的字段不对？**  
